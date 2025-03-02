@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <title>Mini Project 5</title>
+</head>
+<body>
+    
+    <div class="container-fluid mt-4">
+        <div class="row">
+            <div class="col-sm-12">
+                <h3>Changing font size, background and text color with JS</h3>
+            </div>
+        </div>
+        <div class="form-group row mt-5">
+            <label for="backgroundColor" class="col-sm-3">Background Color</label>
+            <div class="col-sm-9">
+                <input type="text" class="form-control js-bgColor" id="backgroundColor" placeholder="i.e. red or #f5f5f5">
+            </div>
+        </div>
+        <div class="form-group row mt-3">
+            <label for="textColor" class="col-sm-3">Text Color</label>
+            <div class="col-sm-9">
+                <input type="text" class="form-control js-textColor" id="textColor" placeholder="i.e. red or #f5f5f5">
+            </div>
+        </div>
+        <div class="form-group row mt-3">
+            <label for="fontSize" class="col-sm-3">Background Color</label>
+            <div class="col-sm-9">
+                <input type="text" class="form-control js-fontSize" id="fontSize" placeholder="i.e. 10px or 2cm">
+            </div>
+        </div>
+    </div>
+
+    <script>
+
+        var bgColor = document.querySelector(".js-bgColor");
+        var textColor = document.querySelector(".js-textColor");
+        var fontSize = document.querySelector(".js-fontSize");
+        var body = document.querySelector("body");
+
+        //change the bg color when the event called
+        function backgroundColor(event){
+            body.style.backgroundColor = event.target.value;
+        }
+
+        //Change the text color when event called
+        function changeTextColor(event){
+            body.style.color = event.target.value;
+        }
+
+        //Change the font size when event called
+        function changeFontSize(event){
+            body.style.fontSize = event.target.value;
+        }
+
+        //Add the event listeners
+        bgColor.addEventListener('keyup', backgroundColor);
+        textColor.addEventListener('keyup', changeTextColor);
+        fontSize.addEventListener('keyup',changeFontSize);
+
+
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>      
+</body>
+</html>
